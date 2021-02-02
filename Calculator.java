@@ -12,10 +12,11 @@ public class Calculator {
         String yesNo;
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter figure(rectangle,triangle,square)");
-
         String figure = myObj.nextLine();  // Read user input
         int x, y, z;
-        if ("rectangle".equals(figure) || "triangle".equals(figure) || "square".equals(figure)) {
+        String choice;
+        boolean isRunning = true;
+        while(isRunning == true) {
             switch (figure) {
                 case "rectangle":
                     System.out.println("Enter figure values");
@@ -27,13 +28,6 @@ public class Calculator {
                         System.out.println("Rectangle line value can't be negative");
                     } else
                         System.out.println("Rectangle perimeter is " + (x * 2 + y * 2) + " and area is " + (x * y));
-//                    System.out.println("Do you want to run program again? [y/n]");
-//                    yesNo = myObj.nextLine();  // Read user input
-//                    Thread.sleep(4000);
-//                    if("n".equals(yesNo)){
-//                        break;
-//                    }
-//                    calculate();
                     break;
                 case "triangle":
                     System.out.println("Enter figure values");
@@ -55,13 +49,27 @@ public class Calculator {
                     if (x <= 0) {
                         System.out.println("Square line value can't be 0 or negative");
                     } else
-                        System.out.println("Square perimeter is " + (x * 4) + " and area is " + (x*x));
-                        calculate();
+                        System.out.println("Square perimeter is " + (x * 4) + " and area is " + (x * x));
+                    calculate();
+                    break;
+                default:
+                    System.out.println("Error: bad input");
                     break;
             }
-        } else
-            System.out.println("Error:bad input");
+            System.out.println("Do you want to continue? (Y/N)");
+            choice = myObj.nextLine();
+            switch(choice)
+            {
+                case "Y":
+                    break;
+                case "N":
+                    isRunning = false;
+                    break;
+                default:
+                    System.out.println("Incorrect parameter, running again");
+                    break;
+            }
 
-
+        }
     }
 }
