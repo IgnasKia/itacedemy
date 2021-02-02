@@ -50,7 +50,6 @@ public class Calculator {
                         System.out.println("Square line value can't be 0 or negative");
                     } else
                         System.out.println("Square perimeter is " + (x * 4) + " and area is " + (x * x));
-                    calculate();
                     break;
                 default:
                     System.out.println("Error: bad input");
