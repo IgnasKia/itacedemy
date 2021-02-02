@@ -53,10 +53,9 @@ public class Calculator {
                     break;
                 default:
                     System.out.println("Error: bad input");
-                    break;
             }
             System.out.println("Do you want to continue? (Y/N)");
-            choice = myObj.nextLine();
+            choice = myObj.next();
             switch(choice)
             {
                 case "Y":
@@ -66,7 +65,6 @@ public class Calculator {
                     break;
                 default:
                     System.out.println("Incorrect parameter, running again");
-                    break;
             }
 
         }
