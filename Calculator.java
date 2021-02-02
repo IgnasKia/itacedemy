@@ -16,7 +16,7 @@ public class Calculator {
         int x, y, z;
         String choice;
         boolean isRunning = true;
-        while(isRunning == true) {
+        while(isRunning) {
             switch (figure) {
                 case "rectangle":
                     System.out.println("Enter figure values");
