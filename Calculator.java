@@ -3,7 +3,10 @@ import java.util.*;
 
 public class Calculator {
 
-    static int x,y, z;
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    
     static Scanner myObj = new Scanner(System.in);
 
     public static void main(String[] args){
