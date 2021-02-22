@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Blog</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Blog</a>
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" 
+                  href="#" id="navbarDropdown" 
+                  data-toggle="dropdown" 
+                  aria-haspopup="true" 
+                  aria-expanded="false">
+                    Categories
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">First category</a>
+                    <a class="dropdown-item" href="#">Second category</a>
+                    <a class="dropdown-item" href="#">Third Category</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+          <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <H1>Recent post</H1>
+                    <ul class="nav flex-column" *ngFor="let post of posts">
+                        <li class="nav-item"><a href="#" class="nav-link">{{post.title}}</a></li>
+                    </ul>
+                </div>
+                    <div class="col-9" id="content">
+                        <app-post *ngFor="let post of posts" [post]="post" (readComment)="onComment()"></app-post>
+                    </div>
+            </div>
+          </div>
+    </body>
+</html>
